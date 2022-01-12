@@ -8,22 +8,27 @@ const buttonEls = document.querySelectorAll("button");
 
 // функция создающая елементы в div#boxes
 function createBoxes(amount) {
-  for (i = 0; i < amount; i += 1) {
-    // boxesFieldEl.append(document.createElement("div"));
+  for (let i = 0; i < amount; i += 1) {
+    const newItem = document.createElement("div");
+    newItem.style.background = getRandomHexColor();
+    newItem.style.width = 30 + i * 10 + "px";
+    newItem.style.height = 30 + i * 10 + "px";
+
+    boxesFieldEl.append(newItem);
   }
 }
 
 //Перебор массива объектов buttonEls и...
 
 buttonEls.forEach((el) => {
-  // в случае если объект (кнопка) имеент ключ "create" возвращает значени записсанное в инпут в эту часть добавить функцию создающую библиотекку елементов
+  // в случае если объект (кнопка) имеент ключ "create" передает в функцию, создающую элементы, значене введенное в инпут
   if (el.dataset.hasOwnProperty("create")) {
     el.addEventListener("click", () => {
       createBoxes(inputEl.value);
     });
-    // в случае если объект (кнопка) не имеент ключ "create" очищает div#boxes
+    // в случае если объект (кнопка) не имеент ключ "create" очищает div#boxes просто вставляя пустую строку в innerHTML, не как в задании, но уже и так много времени ушло =)
   } else {
-    el.addEventListener("click", () => {
+    el.addEventListener("click", (event) => {
       boxesFieldEl.innerHTML = ``;
     });
   }
@@ -33,5 +38,3 @@ buttonEls.forEach((el) => {
 // inputEl.addEventListener("input", (number) => {
 //   return number.currentTarget.value;
 // });
-
-// const elToCreate = `<div></div>`;
