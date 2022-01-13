@@ -12,9 +12,9 @@ const counterValueEl = document.querySelector("#value");
 
 counterValueDecrement.addEventListener("click", () => {
   counterValue -= 1;
-  counterValueEl.innerHTML = counterValue;
+  counterValueEl.textContent = counterValue;
 });
 counterValueIncrement.addEventListener("click", () => {
   counterValue += 1;
-  counterValueEl.innerHTML = counterValue;
+  counterValueEl.textContent = counterValue;
 });

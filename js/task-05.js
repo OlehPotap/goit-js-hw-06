@@ -4,5 +4,9 @@ const inputEl = document.querySelector("#name-input");
 const outputEL = document.querySelector("#name-output");
 
 inputEl.addEventListener("input", (action) => {
-  outputEL.textContent = action.currentTarget.value;
+  if (inputEl.value === "") {
+    outputEL.textContent = "Anonymous";
+  } else {
+    outputEL.textContent = action.currentTarget.value;
+  }
 });

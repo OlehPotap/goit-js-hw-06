@@ -28,7 +28,7 @@ buttonEls.forEach((el) => {
     });
     // в случае если объект (кнопка) не имеент ключ "create" очищает div#boxes просто вставляя пустую строку в innerHTML, не как в задании, но уже и так много времени ушло =)
   } else {
-    el.addEventListener("click", (event) => {
+    el.addEventListener("click", () => {
       boxesFieldEl.innerHTML = ``;
     });
   }

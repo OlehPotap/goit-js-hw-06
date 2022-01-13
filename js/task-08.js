@@ -9,7 +9,7 @@ loginForm.addEventListener("submit", (event) => {
   } = event.currentTarget;
 
   if (email.value == "" || password.value === "") {
-    return console.log("alert! Please fill in all inputs!");
+    return alert("Please fill in all inputs!");
   }
 
   email = email.value;
