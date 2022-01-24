@@ -12,9 +12,11 @@ loginForm.addEventListener("submit", (event) => {
     return alert("Please fill in all inputs!");
   }
 
-  email = email.value;
-  password = password.value;
-  console.log({ email, password });
+  const contacts = {
+    email: email.value,
+    password: password.value,
+  };
+  console.log(contacts);
 
   event.currentTarget.reset();
 });
